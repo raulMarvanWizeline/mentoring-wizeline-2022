@@ -1,4 +1,4 @@
-name: deploy website
+name: Deploy website
 on: 
   push:
     branches: [ main ]
@@ -11,7 +11,7 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: 16.13.1
-        - run: npm install
+        - run: npm install --legacy-peer-deps
         - run: npm run test a
   deploy:
     needs: [tests]
